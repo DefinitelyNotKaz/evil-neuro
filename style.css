@@ -1,0 +1,32 @@
+:root {
+    --bg-main: #E7989E;
+    --bg-secondary: #F6919E;
+
+    --scrolling-stripe-1: #C7848B;
+    --scrolling-stripe-2: #CF9295;
+    --line-count: 5;
+    --line-width: 20px;
+}
+
+body {
+    background-color: var(--bg-main);
+}
+
+.barcode {
+    --line-height: calc(100% / var(--line-count));
+    width: calc(var(--line-width) * var(--line-count));
+    height: 100px;
+    background: repeating-linear-gradient(to right, var(--scrolling-stripe-1), var(--scrolling-stripe-1) var(--line-width), var(--scrolling-stripe-2) var(--line-width), var(--scrolling-stripe-2) calc(var(--line-width) * 2));
+    background-size: 200% 100%;
+    animation: barcodeAnimation 10s linear infinite;
+}
+
+@keyframes barcodeAnimation {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
+}
