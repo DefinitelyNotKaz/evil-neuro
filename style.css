@@ -46,8 +46,8 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--chat-duo-tone-dark);
-  width: 39rem;
-  height: 67vh;
+  width: 30vw;
+  height: 68vh;
   top: 10vh;
   left: 10vw;
   border-radius: 3em;
@@ -67,7 +67,7 @@ body {
 }
 
 .heart {
-  width: 20em;
+  width: 15vw;
   filter: invert(80%) sepia(22%) saturate(107%) hue-rotate(304deg)
     brightness(106%) contrast(109%);
 }
@@ -75,7 +75,7 @@ body {
 .heart-line {
   position: absolute;
   z-index: 1;
-  width: 18em;
+  width: 13vw;
   filter: invert(94%) sepia(2%) saturate(1552%) hue-rotate(314deg)
     brightness(102%) contrast(102%);
 }
@@ -85,7 +85,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 3em;
+  height: 10%;
   width: 85%;
   bottom: 3.5em;
 }
@@ -97,6 +97,7 @@ body {
   height: 100%;
   border-radius: 50px;
   width: 65%;
+  height: 50%;
 }
 
 .chat-cat {
@@ -131,7 +132,7 @@ body {
 }
 
 .chat-send {
-  height: 100%;
+  height: 50%;
   border-radius: 50px;
   width: 6rem;
   background-color: transparent;
@@ -140,7 +141,7 @@ body {
   color: var(--lineart);
   font-size: x-large;
   font-weight: bold;
-  font-family: "Invulnerable";
+  font-family: "Invulnerable", sans-serif;
 }
 
 .chat-shadow {
@@ -149,8 +150,8 @@ body {
   z-index: 1;
   height: 50%;
   width: 20%;
-  top: 20em;
-  left: 10.2em;
+  top: 25vh;
+  left: 8.5vw;
   transform: rotate(353deg);
 }
 
@@ -167,8 +168,8 @@ body {
   background-color: var(--blue-stripe-1);
   width: 17%;
   height: 40%;
-  top: 31em;
-  left: 37em;
+  top: 40vh;
+  left: 27vw;
   z-index: 0;
   transform: rotate(8deg);
 }
