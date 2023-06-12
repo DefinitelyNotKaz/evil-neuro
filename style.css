@@ -19,11 +19,11 @@
 
   --stripe-1: #fba1aa;
   --stripe-2: #fdafad;
-  --line-width: 20px;
+  --line-width: 50px;
 
   --blue-stripe-1: #7bdcd3;
   --blue-stripe-2: #73c8cf;
-  --blue-line-width: 30px;
+  --blue-line-width: 40px;
 }
 
 body {
@@ -32,12 +32,31 @@ body {
   overflow: hidden;
 }
 
+.background-barcode {
+  height: 15vh;
+  width: 30vw;
+  position: absolute;
+  bottom: 9vh;
+  transform: rotate(50deg);
+  left: -16vh;
+  z-index: 0;
+}
+
 .overlay {
   background-color: var(--bg-secondary);
   height: 95vh;
   margin-left: 25vw;
   border-bottom-left-radius: 5%;
   transform: rotate(-0.2deg);
+  overflow: hidden;
+}
+
+.corner-barcode {
+  height: 30vh;
+  width: 17vw;
+  transform: rotate(45deg);
+  margin-left: -4vw;
+  margin-top: -15vh;
 }
 
 .chat {
@@ -47,7 +66,7 @@ body {
   align-items: center;
   background-color: var(--chat-duo-tone-dark);
   width: 30vw;
-  height: 68vh;
+  height: 75vh;
   top: 10vh;
   left: 10vw;
   border-radius: 5%;
@@ -85,7 +104,7 @@ body {
   align-items: center;
   height: 10%;
   width: 85%;
-  bottom: 3.5em;
+  bottom: 2vh;
 }
 
 .chat-text-box {
@@ -163,7 +182,7 @@ body {
   background-color: var(--blue-stripe-1);
   width: 17%;
   height: 40%;
-  top: 40vh;
+  top: 47.5vh;
   left: 27vw;
   z-index: 0;
   transform: rotate(8deg);
@@ -178,16 +197,13 @@ body {
 }
 
 .barcode {
-  --line-height: calc(100% / var(--line-count));
-  width: calc(var(--line-width) * var(--line-count));
-  height: 100px;
   background: repeating-linear-gradient(to right,
       var(--stripe-1),
       var(--stripe-1) var(--line-width),
       var(--stripe-2) var(--line-width),
       var(--stripe-2) calc(var(--line-width) * 2));
   background-size: 200% 100%;
-  animation: barcodeAnimation 10s linear infinite;
+  animation: barcodeAnimation 50s linear infinite;
 }
 
 .blue-barcode {
@@ -197,7 +213,7 @@ body {
       var(--blue-stripe-2) var(--blue-line-width),
       var(--blue-stripe-2) calc(var(--blue-line-width) * 2));
   background-size: 200% 100%;
-  animation: barcodeAnimation 25s linear infinite;
+  animation: barcodeAnimation 45s linear infinite;
 }
 
 @keyframes barcodeAnimation {
