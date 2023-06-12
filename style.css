@@ -32,6 +32,14 @@ body {
   overflow: hidden;
 }
 
+.neuro {
+  position: absolute;
+  z-index: 99;
+  height: 90vh;
+  bottom: 0;
+  right: 10vw;
+}
+
 .background-barcode {
   height: 15vh;
   width: 30vw;
