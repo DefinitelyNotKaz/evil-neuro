@@ -68,16 +68,14 @@ body {
 
 .heart {
   width: 15vw;
-  filter: invert(80%) sepia(22%) saturate(107%) hue-rotate(304deg)
-    brightness(106%) contrast(109%);
+  filter: invert(80%) sepia(22%) saturate(107%) hue-rotate(304deg) brightness(106%) contrast(109%);
 }
 
 .heart-line {
   position: absolute;
   z-index: 1;
   width: 13vw;
-  filter: invert(94%) sepia(2%) saturate(1552%) hue-rotate(314deg)
-    brightness(102%) contrast(102%);
+  filter: invert(94%) sepia(2%) saturate(1552%) hue-rotate(314deg) brightness(102%) contrast(102%);
 }
 
 .chat-controls {
@@ -103,8 +101,7 @@ body {
 .chat-cat {
   margin-left: 1em;
   width: 2em;
-  filter: invert(30%) sepia(15%) saturate(2106%) hue-rotate(283deg)
-    brightness(94%) contrast(85%);
+  filter: invert(30%) sepia(15%) saturate(2106%) hue-rotate(283deg) brightness(94%) contrast(85%);
 }
 
 .text-cursor {
@@ -117,8 +114,7 @@ body {
 }
 
 .chat-settings {
-  filter: invert(60%) sepia(47%) saturate(846%) hue-rotate(219deg)
-    brightness(96%) contrast(78%);
+  filter: invert(60%) sepia(47%) saturate(846%) hue-rotate(219deg) brightness(96%) contrast(78%);
   height: 2.5em;
 }
 
@@ -158,8 +154,7 @@ body {
 .chat-shadow-accent {
   margin-left: 1.25em;
   margin-top: 2em;
-  filter: invert(72%) sepia(7%) saturate(2109%) hue-rotate(136deg)
-    brightness(102%) contrast(87%);
+  filter: invert(72%) sepia(7%) saturate(2109%) hue-rotate(136deg) brightness(102%) contrast(87%);
   transform: rotate(-15deg);
 }
 
@@ -174,29 +169,33 @@ body {
   transform: rotate(8deg);
 }
 
+.chat-blue-accent {
+  position: absolute;
+  right: 1.5em;
+  top: 1.5em;
+  filter: invert(85%) sepia(63%) saturate(240%) hue-rotate(84deg) brightness(101%) contrast(99%);
+  transform: rotate(28deg);
+}
+
 .barcode {
   --line-height: calc(100% / var(--line-count));
   width: calc(var(--line-width) * var(--line-count));
   height: 100px;
-  background: repeating-linear-gradient(
-    to right,
-    var(--stripe-1),
-    var(--stripe-1) var(--line-width),
-    var(--stripe-2) var(--line-width),
-    var(--stripe-2) calc(var(--line-width) * 2)
-  );
+  background: repeating-linear-gradient(to right,
+      var(--stripe-1),
+      var(--stripe-1) var(--line-width),
+      var(--stripe-2) var(--line-width),
+      var(--stripe-2) calc(var(--line-width) * 2));
   background-size: 200% 100%;
   animation: barcodeAnimation 10s linear infinite;
 }
 
 .blue-barcode {
-  background: repeating-linear-gradient(
-    325deg,
-    var(--blue-stripe-1),
-    var(--blue-stripe-1) var(--blue-line-width),
-    var(--blue-stripe-2) var(--blue-line-width),
-    var(--blue-stripe-2) calc(var(--blue-line-width) * 2)
-  );
+  background: repeating-linear-gradient(325deg,
+      var(--blue-stripe-1),
+      var(--blue-stripe-1) var(--blue-line-width),
+      var(--blue-stripe-2) var(--blue-line-width),
+      var(--blue-stripe-2) calc(var(--blue-line-width) * 2));
   background-size: 200% 100%;
   animation: barcodeAnimation 25s linear infinite;
 }
