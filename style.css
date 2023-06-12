@@ -1,32 +1,225 @@
-:root {
-    --bg-main: #E7989E;
-    --bg-secondary: #F6919E;
+@font-face {
+  font-family: "Invulnerable";
+  src: url("./assets/font/InvulnerableBB.ttf") format("truetype");
+}
 
-    --scrolling-stripe-1: #C7848B;
-    --scrolling-stripe-2: #CF9295;
-    --line-count: 5;
-    --line-width: 20px;
+:root {
+  --bg-main: #f58291;
+  --bg-secondary: #fea4ad;
+
+  --lineart: #8a3f5e;
+  --chat-duo-tone-light: #fff3f3;
+  --chat-duo-tone-dark: #fbe7e8;
+  --purple: #ba84dc;
+  --light-pink: #fec7dc;
+  --yellow: #feebcb;
+  --magenta: #db4a73;
+
+  --line-count: 5;
+
+  --stripe-1: #fba1aa;
+  --stripe-2: #fdafad;
+  --line-width: 20px;
+
+  --blue-stripe-1: #7bdcd3;
+  --blue-stripe-2: #73c8cf;
+  --blue-line-width: 30px;
 }
 
 body {
-    background-color: var(--bg-main);
+  background-color: var(--bg-main);
+  margin: 0;
+  overflow: hidden;
+}
+
+.overlay {
+  background-color: var(--bg-secondary);
+  height: 95vh;
+  margin-left: 25vw;
+  border-bottom-left-radius: 5%;
+  transform: rotate(-0.2deg);
+}
+
+.chat {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--chat-duo-tone-dark);
+  width: 30vw;
+  height: 68vh;
+  top: 10vh;
+  left: 10vw;
+  border-radius: 5%;
+  border: 3px solid var(--lineart);
+  z-index: 2;
+}
+
+.chat-light {
+  background-color: var(--chat-duo-tone-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 95%;
+  border-radius: inherit;
+}
+
+.heart {
+  width: 15vw;
+  filter: invert(80%) sepia(22%) saturate(107%) hue-rotate(304deg) brightness(106%) contrast(109%);
+}
+
+.heart-line {
+  position: absolute;
+  z-index: 1;
+  width: 13vw;
+  filter: invert(94%) sepia(2%) saturate(1552%) hue-rotate(314deg) brightness(102%) contrast(102%);
+}
+
+.chat-controls {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  width: 85%;
+  bottom: 3.5em;
+}
+
+.chat-text-box {
+  display: flex;
+  align-items: center;
+  background-color: var(--chat-duo-tone-dark);
+  height: 100%;
+  border-radius: 50px;
+  width: 65%;
+  height: 50%;
+}
+
+.chat-cat {
+  margin-left: 1em;
+  width: 2em;
+  filter: invert(30%) sepia(15%) saturate(2106%) hue-rotate(283deg) brightness(94%) contrast(85%);
+}
+
+.text-cursor {
+  background-color: var(--bg-main);
+  height: 45%;
+  width: 0.2em;
+  margin-left: 1em;
+  border-radius: 5%;
+  animation: cursorAnimation 1.5s linear infinite;
+}
+
+.chat-settings {
+  filter: invert(60%) sepia(47%) saturate(846%) hue-rotate(219deg) brightness(96%) contrast(78%);
+  height: 2.5em;
+}
+
+.chat-decoration {
+  font-family: "Invulnerable";
+  font-weight: bold;
+  color: var(--lineart);
+  font-size: x-large;
+  margin-left: auto;
+  margin-right: 1em;
+}
+
+.chat-send {
+  height: 50%;
+  border-radius: 50px;
+  width: 6rem;
+  background-color: transparent;
+  border: 3px solid var(--lineart);
+  text-transform: uppercase;
+  color: var(--lineart);
+  font-size: x-large;
+  font-weight: bold;
+  font-family: "Invulnerable", sans-serif;
+}
+
+.chat-shadow {
+  display: block;
+  background-color: var(--lineart);
+  z-index: 1;
+  height: 50%;
+  width: 20%;
+  top: 25vh;
+  left: 8.5vw;
+  transform: rotate(353deg);
+}
+
+.chat-shadow-accent {
+  margin-left: 1.25em;
+  margin-top: 2em;
+  filter: invert(72%) sepia(7%) saturate(2109%) hue-rotate(136deg) brightness(102%) contrast(87%);
+  transform: rotate(-15deg);
+}
+
+.chat-blue {
+  display: block;
+  background-color: var(--blue-stripe-1);
+  width: 17%;
+  height: 40%;
+  top: 40vh;
+  left: 27vw;
+  z-index: 0;
+  transform: rotate(8deg);
+}
+
+.chat-blue-accent {
+  position: absolute;
+  right: 1.5em;
+  top: 1.5em;
+  filter: invert(85%) sepia(63%) saturate(240%) hue-rotate(84deg) brightness(101%) contrast(99%);
+  transform: rotate(28deg);
 }
 
 .barcode {
-    --line-height: calc(100% / var(--line-count));
-    width: calc(var(--line-width) * var(--line-count));
-    height: 100px;
-    background: repeating-linear-gradient(to right, var(--scrolling-stripe-1), var(--scrolling-stripe-1) var(--line-width), var(--scrolling-stripe-2) var(--line-width), var(--scrolling-stripe-2) calc(var(--line-width) * 2));
-    background-size: 200% 100%;
-    animation: barcodeAnimation 10s linear infinite;
+  --line-height: calc(100% / var(--line-count));
+  width: calc(var(--line-width) * var(--line-count));
+  height: 100px;
+  background: repeating-linear-gradient(to right,
+      var(--stripe-1),
+      var(--stripe-1) var(--line-width),
+      var(--stripe-2) var(--line-width),
+      var(--stripe-2) calc(var(--line-width) * 2));
+  background-size: 200% 100%;
+  animation: barcodeAnimation 10s linear infinite;
+}
+
+.blue-barcode {
+  background: repeating-linear-gradient(325deg,
+      var(--blue-stripe-1),
+      var(--blue-stripe-1) var(--blue-line-width),
+      var(--blue-stripe-2) var(--blue-line-width),
+      var(--blue-stripe-2) calc(var(--blue-line-width) * 2));
+  background-size: 200% 100%;
+  animation: barcodeAnimation 25s linear infinite;
 }
 
 @keyframes barcodeAnimation {
-    0% {
-        background-position: 100% 0;
-    }
+  0% {
+    background-position: 100% 0;
+  }
 
-    100% {
-        background-position: -100% 0;
-    }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes cursorAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
