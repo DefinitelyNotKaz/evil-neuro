@@ -50,7 +50,7 @@ body {
   height: 68vh;
   top: 10vh;
   left: 10vw;
-  border-radius: 3em;
+  border-radius: 5%;
   border: 3px solid var(--lineart);
   z-index: 2;
 }
